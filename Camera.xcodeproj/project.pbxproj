@@ -1,0 +1,544 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9A5A57361D6C1CE1009959F1 /* CaptureVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5A57351D6C1CE1009959F1 /* CaptureVideoViewController.swift */; };
+		9A5A57381D6C1CF2009959F1 /* FilesViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5A57371D6C1CF2009959F1 /* FilesViewControllers.swift */; };
+		9A5A573A1D6C2C47009959F1 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5A57391D6C2C47009959F1 /* CameraManager.swift */; };
+		9A5A577E1D6C5242009959F1 /* GPUImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5A577D1D6C5242009959F1 /* GPUImageViewController.swift */; };
+		9A5A57C51D6C5D86009959F1 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5A57C21D6C5CE9009959F1 /* GPUImage.framework */; };
+		9A5A57C81D6C5D8F009959F1 /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A5A57C21D6C5CE9009959F1 /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9A78B1AD1D6B3A1C009E3E0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A78B1AC1D6B3A1C009E3E0D /* AppDelegate.swift */; };
+		9A78B1AF1D6B3A1C009E3E0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A78B1AE1D6B3A1C009E3E0D /* ViewController.swift */; };
+		9A78B1B21D6B3A1C009E3E0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A78B1B01D6B3A1C009E3E0D /* Main.storyboard */; };
+		9A78B1B41D6B3A1C009E3E0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A78B1B31D6B3A1C009E3E0D /* Assets.xcassets */; };
+		9A78B1B71D6B3A1C009E3E0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A78B1B51D6B3A1C009E3E0D /* LaunchScreen.storyboard */; };
+		9ABE78E91D6C68B600251395 /* lookup_amatorka.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ABE78E51D6C68B600251395 /* lookup_amatorka.png */; };
+		9ABE78EA1D6C68B600251395 /* lookup_miss_etikate.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ABE78E61D6C68B600251395 /* lookup_miss_etikate.png */; };
+		9ABE78EB1D6C68B600251395 /* lookup_soft_elegance_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ABE78E71D6C68B600251395 /* lookup_soft_elegance_1.png */; };
+		9ABE78EC1D6C68B600251395 /* lookup_soft_elegance_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ABE78E81D6C68B600251395 /* lookup_soft_elegance_2.png */; };
+		9AC04C921D6BDEFA0047F109 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC04C911D6BDEFA0047F109 /* AVFoundation.framework */; };
+		9AC04C941D6BDF030047F109 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC04C931D6BDF030047F109 /* AssetsLibrary.framework */; };
+		9AC04C961D6BDF0B0047F109 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC04C951D6BDF0B0047F109 /* CoreGraphics.framework */; };
+		9AC04C981D6BDF130047F109 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC04C971D6BDF120047F109 /* CoreMedia.framework */; };
+		9AC04C9A1D6BDF240047F109 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC04C991D6BDF240047F109 /* CoreMotion.framework */; };
+		9AC04C9C1D6BDF320047F109 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC04C9B1D6BDF320047F109 /* CoreVideo.framework */; };
+		9AC04C9E1D6BDF3A0047F109 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC04C9D1D6BDF3A0047F109 /* Foundation.framework */; };
+		9AC04CA01D6BDF430047F109 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC04C9F1D6BDF430047F109 /* ImageIO.framework */; };
+		9AC04CA21D6BDF580047F109 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC04CA11D6BDF580047F109 /* OpenGLES.framework */; };
+		9AC04CA41D6BDF5E0047F109 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC04CA31D6BDF5E0047F109 /* QuartzCore.framework */; };
+		9AC04CA61D6BDF630047F109 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC04CA51D6BDF630047F109 /* UIKit.framework */; };
+		9AC04CA91D6BE0380047F109 /* AVCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC04CA81D6BE0380047F109 /* AVCaptureViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9A5A57841D6C56ED009959F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A5A577F1D6C56ED009959F1 /* GPUImage-iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCD1B1251C66A262001F2BDC;
+			remoteInfo = GPUImage;
+		};
+		9A5A57861D6C56ED009959F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A5A577F1D6C56ED009959F1 /* GPUImage-iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCD1B12F1C66A262001F2BDC;
+			remoteInfo = GPUImageTests;
+		};
+		9A5A57C11D6C5CE9009959F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A5A57BC1D6C5CE9009959F1 /* GPUImage-iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCD1B1251C66A262001F2BDC;
+			remoteInfo = GPUImage;
+		};
+		9A5A57C31D6C5CE9009959F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A5A57BC1D6C5CE9009959F1 /* GPUImage-iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCD1B12F1C66A262001F2BDC;
+			remoteInfo = GPUImageTests;
+		};
+		9A5A57C61D6C5D8A009959F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A5A57BC1D6C5CE9009959F1 /* GPUImage-iOS.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BCD1B1241C66A262001F2BDC;
+			remoteInfo = GPUImage;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9A5A579F1D6C5A6F009959F1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9A5A57C81D6C5D8F009959F1 /* GPUImage.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0D2D154FA78125DC823D5157 /* Pods_Camera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Camera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A5A57351D6C1CE1009959F1 /* CaptureVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureVideoViewController.swift; sourceTree = "<group>"; };
+		9A5A57371D6C1CF2009959F1 /* FilesViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesViewControllers.swift; sourceTree = "<group>"; };
+		9A5A57391D6C2C47009959F1 /* CameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		9A5A577D1D6C5242009959F1 /* GPUImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPUImageViewController.swift; sourceTree = "<group>"; };
+		9A5A577F1D6C56ED009959F1 /* GPUImage-iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "GPUImage-iOS.xcodeproj"; path = "../../../../Downloads/UI/GPUImage2-master/framework/GPUImage-iOS.xcodeproj"; sourceTree = "<group>"; };
+		9A5A57BC1D6C5CE9009959F1 /* GPUImage-iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "GPUImage-iOS.xcodeproj"; path = "../../../Desktop/GPUImage2/framework/GPUImage-iOS.xcodeproj"; sourceTree = "<group>"; };
+		9A78B1A91D6B3A1B009E3E0D /* Camera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Camera.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A78B1AC1D6B3A1C009E3E0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9A78B1AE1D6B3A1C009E3E0D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9A78B1B11D6B3A1C009E3E0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9A78B1B31D6B3A1C009E3E0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9A78B1B61D6B3A1C009E3E0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9A78B1B81D6B3A1C009E3E0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9ABE78E51D6C68B600251395 /* lookup_amatorka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_amatorka.png; sourceTree = "<group>"; };
+		9ABE78E61D6C68B600251395 /* lookup_miss_etikate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_miss_etikate.png; sourceTree = "<group>"; };
+		9ABE78E71D6C68B600251395 /* lookup_soft_elegance_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_soft_elegance_1.png; sourceTree = "<group>"; };
+		9ABE78E81D6C68B600251395 /* lookup_soft_elegance_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_soft_elegance_2.png; sourceTree = "<group>"; };
+		9AC04C8D1D6BDE020047F109 /* Camera-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Camera-Bridging-Header.h"; sourceTree = "<group>"; };
+		9AC04C911D6BDEFA0047F109 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9AC04C931D6BDF030047F109 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		9AC04C951D6BDF0B0047F109 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9AC04C971D6BDF120047F109 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		9AC04C991D6BDF240047F109 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		9AC04C9B1D6BDF320047F109 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		9AC04C9D1D6BDF3A0047F109 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9AC04C9F1D6BDF430047F109 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		9AC04CA11D6BDF580047F109 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		9AC04CA31D6BDF5E0047F109 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9AC04CA51D6BDF630047F109 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9AC04CA81D6BE0380047F109 /* AVCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVCaptureViewController.swift; sourceTree = "<group>"; };
+		A89F9C12D36018048D089904 /* Pods-Camera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Camera.release.xcconfig"; path = "Pods/Target Support Files/Pods-Camera/Pods-Camera.release.xcconfig"; sourceTree = "<group>"; };
+		F3B12D13602BD9E2438C38BE /* Pods-Camera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Camera.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Camera/Pods-Camera.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9A78B1A61D6B3A1B009E3E0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A5A57C51D6C5D86009959F1 /* GPUImage.framework in Frameworks */,
+				9AC04CA61D6BDF630047F109 /* UIKit.framework in Frameworks */,
+				9AC04CA41D6BDF5E0047F109 /* QuartzCore.framework in Frameworks */,
+				9AC04CA21D6BDF580047F109 /* OpenGLES.framework in Frameworks */,
+				9AC04CA01D6BDF430047F109 /* ImageIO.framework in Frameworks */,
+				9AC04C9E1D6BDF3A0047F109 /* Foundation.framework in Frameworks */,
+				9AC04C9C1D6BDF320047F109 /* CoreVideo.framework in Frameworks */,
+				9AC04C9A1D6BDF240047F109 /* CoreMotion.framework in Frameworks */,
+				9AC04C981D6BDF130047F109 /* CoreMedia.framework in Frameworks */,
+				9AC04C961D6BDF0B0047F109 /* CoreGraphics.framework in Frameworks */,
+				9AC04C941D6BDF030047F109 /* AssetsLibrary.framework in Frameworks */,
+				9AC04C921D6BDEFA0047F109 /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1CA2B318331EBADCE6FCFA01 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F3B12D13602BD9E2438C38BE /* Pods-Camera.debug.xcconfig */,
+				A89F9C12D36018048D089904 /* Pods-Camera.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9A5A57801D6C56ED009959F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A5A57851D6C56ED009959F1 /* GPUImage.framework */,
+				9A5A57871D6C56ED009959F1 /* GPUImageTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A5A57BD1D6C5CE9009959F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A5A57C21D6C5CE9009959F1 /* GPUImage.framework */,
+				9A5A57C41D6C5CE9009959F1 /* GPUImageTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A78B1A01D6B3A1B009E3E0D = {
+			isa = PBXGroup;
+			children = (
+				9A78B1AB1D6B3A1C009E3E0D /* Camera */,
+				9AC04CA71D6BDF7E0047F109 /* Frameworks */,
+				9A78B1AA1D6B3A1B009E3E0D /* Products */,
+				1CA2B318331EBADCE6FCFA01 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		9A78B1AA1D6B3A1B009E3E0D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A78B1A91D6B3A1B009E3E0D /* Camera.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A78B1AB1D6B3A1C009E3E0D /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				9A5A57BC1D6C5CE9009959F1 /* GPUImage-iOS.xcodeproj */,
+				9A78B1AC1D6B3A1C009E3E0D /* AppDelegate.swift */,
+				9A78B1AE1D6B3A1C009E3E0D /* ViewController.swift */,
+				9A78B1B01D6B3A1C009E3E0D /* Main.storyboard */,
+				9AC04CA81D6BE0380047F109 /* AVCaptureViewController.swift */,
+				9A5A57391D6C2C47009959F1 /* CameraManager.swift */,
+				9A5A57351D6C1CE1009959F1 /* CaptureVideoViewController.swift */,
+				9A5A57371D6C1CF2009959F1 /* FilesViewControllers.swift */,
+				9A5A577D1D6C5242009959F1 /* GPUImageViewController.swift */,
+				9ABE78E11D6C68A900251395 /* images */,
+				9A78B1B31D6B3A1C009E3E0D /* Assets.xcassets */,
+				9A78B1B51D6B3A1C009E3E0D /* LaunchScreen.storyboard */,
+				9A78B1B81D6B3A1C009E3E0D /* Info.plist */,
+				9AC04C8D1D6BDE020047F109 /* Camera-Bridging-Header.h */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		9ABE78E11D6C68A900251395 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				9ABE78E51D6C68B600251395 /* lookup_amatorka.png */,
+				9ABE78E61D6C68B600251395 /* lookup_miss_etikate.png */,
+				9ABE78E71D6C68B600251395 /* lookup_soft_elegance_1.png */,
+				9ABE78E81D6C68B600251395 /* lookup_soft_elegance_2.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		9AC04CA71D6BDF7E0047F109 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A5A577F1D6C56ED009959F1 /* GPUImage-iOS.xcodeproj */,
+				9AC04CA51D6BDF630047F109 /* UIKit.framework */,
+				9AC04CA31D6BDF5E0047F109 /* QuartzCore.framework */,
+				9AC04CA11D6BDF580047F109 /* OpenGLES.framework */,
+				9AC04C9F1D6BDF430047F109 /* ImageIO.framework */,
+				9AC04C9D1D6BDF3A0047F109 /* Foundation.framework */,
+				9AC04C9B1D6BDF320047F109 /* CoreVideo.framework */,
+				9AC04C991D6BDF240047F109 /* CoreMotion.framework */,
+				9AC04C971D6BDF120047F109 /* CoreMedia.framework */,
+				9AC04C951D6BDF0B0047F109 /* CoreGraphics.framework */,
+				9AC04C931D6BDF030047F109 /* AssetsLibrary.framework */,
+				9AC04C911D6BDEFA0047F109 /* AVFoundation.framework */,
+				0D2D154FA78125DC823D5157 /* Pods_Camera.framework */,
+			);
+			name = Frameworks;
+			path = Camera/Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9A78B1A81D6B3A1B009E3E0D /* Camera */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A78B1BB1D6B3A1C009E3E0D /* Build configuration list for PBXNativeTarget "Camera" */;
+			buildPhases = (
+				9A78B1A51D6B3A1B009E3E0D /* Sources */,
+				9A5A579F1D6C5A6F009959F1 /* CopyFiles */,
+				9A78B1A61D6B3A1B009E3E0D /* Frameworks */,
+				9A78B1A71D6B3A1B009E3E0D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A5A57C71D6C5D8A009959F1 /* PBXTargetDependency */,
+			);
+			name = Camera;
+			productName = Camera;
+			productReference = 9A78B1A91D6B3A1B009E3E0D /* Camera.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9A78B1A11D6B3A1B009E3E0D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = zeWill;
+				TargetAttributes = {
+					9A78B1A81D6B3A1B009E3E0D = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = R3MSHJSLJK;
+					};
+				};
+			};
+			buildConfigurationList = 9A78B1A41D6B3A1B009E3E0D /* Build configuration list for PBXProject "Camera" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9A78B1A01D6B3A1B009E3E0D;
+			productRefGroup = 9A78B1AA1D6B3A1B009E3E0D /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9A5A57801D6C56ED009959F1 /* Products */;
+					ProjectRef = 9A5A577F1D6C56ED009959F1 /* GPUImage-iOS.xcodeproj */;
+				},
+				{
+					ProductGroup = 9A5A57BD1D6C5CE9009959F1 /* Products */;
+					ProjectRef = 9A5A57BC1D6C5CE9009959F1 /* GPUImage-iOS.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				9A78B1A81D6B3A1B009E3E0D /* Camera */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9A5A57851D6C56ED009959F1 /* GPUImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GPUImage.framework;
+			remoteRef = 9A5A57841D6C56ED009959F1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A5A57871D6C56ED009959F1 /* GPUImageTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GPUImageTests.xctest;
+			remoteRef = 9A5A57861D6C56ED009959F1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A5A57C21D6C5CE9009959F1 /* GPUImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GPUImage.framework;
+			remoteRef = 9A5A57C11D6C5CE9009959F1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A5A57C41D6C5CE9009959F1 /* GPUImageTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GPUImageTests.xctest;
+			remoteRef = 9A5A57C31D6C5CE9009959F1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9A78B1A71D6B3A1B009E3E0D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A78B1B71D6B3A1C009E3E0D /* LaunchScreen.storyboard in Resources */,
+				9A78B1B41D6B3A1C009E3E0D /* Assets.xcassets in Resources */,
+				9A78B1B21D6B3A1C009E3E0D /* Main.storyboard in Resources */,
+				9ABE78EC1D6C68B600251395 /* lookup_soft_elegance_2.png in Resources */,
+				9ABE78EB1D6C68B600251395 /* lookup_soft_elegance_1.png in Resources */,
+				9ABE78E91D6C68B600251395 /* lookup_amatorka.png in Resources */,
+				9ABE78EA1D6C68B600251395 /* lookup_miss_etikate.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9A78B1A51D6B3A1B009E3E0D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A5A57381D6C1CF2009959F1 /* FilesViewControllers.swift in Sources */,
+				9A78B1AF1D6B3A1C009E3E0D /* ViewController.swift in Sources */,
+				9AC04CA91D6BE0380047F109 /* AVCaptureViewController.swift in Sources */,
+				9A5A57361D6C1CE1009959F1 /* CaptureVideoViewController.swift in Sources */,
+				9A5A573A1D6C2C47009959F1 /* CameraManager.swift in Sources */,
+				9A5A577E1D6C5242009959F1 /* GPUImageViewController.swift in Sources */,
+				9A78B1AD1D6B3A1C009E3E0D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9A5A57C71D6C5D8A009959F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GPUImage;
+			targetProxy = 9A5A57C61D6C5D8A009959F1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9A78B1B01D6B3A1C009E3E0D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A78B1B11D6B3A1C009E3E0D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9A78B1B51D6B3A1C009E3E0D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A78B1B61D6B3A1C009E3E0D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9A78B1B91D6B3A1C009E3E0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9A78B1BA1D6B3A1C009E3E0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9A78B1BC1D6B3A1C009E3E0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3B12D13602BD9E2438C38BE /* Pods-Camera.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = Camera/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Will.JerryZe.Camera;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Camera/Camera-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9A78B1BD1D6B3A1C009E3E0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A89F9C12D36018048D089904 /* Pods-Camera.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = Camera/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Will.JerryZe.Camera;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Camera/Camera-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9A78B1A41D6B3A1B009E3E0D /* Build configuration list for PBXProject "Camera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A78B1B91D6B3A1C009E3E0D /* Debug */,
+				9A78B1BA1D6B3A1C009E3E0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A78B1BB1D6B3A1C009E3E0D /* Build configuration list for PBXNativeTarget "Camera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A78B1BC1D6B3A1C009E3E0D /* Debug */,
+				9A78B1BD1D6B3A1C009E3E0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9A78B1A11D6B3A1B009E3E0D /* Project object */;
+}
