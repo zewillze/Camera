@@ -22,9 +22,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4R-3Y-g5w">
                                 <rect key="frame" x="223" y="205" width="154" height="30"/>
                                 <state key="normal" title="UIImagePickController"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="123" y="205" width="154" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="pickController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t5c-j4-xRC"/>
                                 </connections>
@@ -32,9 +29,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5D-s5-5AD">
                                 <rect key="frame" x="252" y="280" width="96" height="30"/>
                                 <state key="normal" title="AVFoundation"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="152" y="280" width="96" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="showAVCapture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="chA-bV-2ni"/>
                                 </connections>
@@ -127,10 +121,10 @@
                                 <exclude reference="qmC-Zb-htd"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="E0t-Wf-NnX"/>
                                 <exclude reference="1RU-W3-EwH"/>
                                 <exclude reference="G8Y-yr-rbE"/>
                                 <exclude reference="own-31-hki"/>
-                                <exclude reference="E0t-Wf-NnX"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -138,10 +132,10 @@
                                 <include reference="qmC-Zb-htd"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="E0t-Wf-NnX"/>
                                 <include reference="1RU-W3-EwH"/>
                                 <include reference="G8Y-yr-rbE"/>
                                 <include reference="own-31-hki"/>
-                                <include reference="E0t-Wf-NnX"/>
                             </mask>
                         </variation>
                     </view>
@@ -151,7 +145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sgm-Wq-mtR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="798" y="1085"/>
+            <point key="canvasLocation" x="403.5" y="1103.25"/>
         </scene>
         <!--Capture View Controller-->
         <scene sceneID="asL-D8-rkJ">
@@ -204,7 +198,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="4IU-jK-zd5" kind="embed" id="CMG-nG-AA4"/>
+                                    <segue destination="4IU-jK-zd5" kind="embed" identifier="fileContain" id="CMG-nG-AA4"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -251,6 +245,9 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="sO4-g6-jHT"/>
+                    <connections>
+                        <outlet property="filesContainView" destination="bCr-rW-Hpn" id="Utq-fY-99Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rd9-iE-TkY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -425,12 +422,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6BL-Ss-ug7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1674" y="-30.75"/>
+            <point key="canvasLocation" x="1740" y="17.25"/>
         </scene>
-        <!--View Controller-->
+        <!--Files View Controllers-->
         <scene sceneID="5ZI-59-9ZC">
             <objects>
-                <viewController id="4IU-jK-zd5" sceneMemberID="viewController">
+                <viewController id="4IU-jK-zd5" customClass="FilesViewControllers" customModule="Camera" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hCC-BQ-oAb"/>
                         <viewControllerLayoutGuide type="bottom" id="D1K-62-MHF"/>
@@ -438,12 +435,53 @@
                     <view key="view" contentMode="scaleToFill" id="gU0-yj-KGn">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZuB-1J-Pa8">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="4IU-jK-zd5" id="US2-Fq-nmG"/>
+                                    <outlet property="delegate" destination="4IU-jK-zd5" id="KVX-ve-OlU"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZuB-1J-Pa8" firstAttribute="top" secondItem="hCC-BQ-oAb" secondAttribute="bottom" id="A3H-i9-2Xs"/>
+                            <constraint firstItem="ZuB-1J-Pa8" firstAttribute="leading" secondItem="gU0-yj-KGn" secondAttribute="leadingMargin" constant="-20" id="REp-sw-Gtk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZuB-1J-Pa8" secondAttribute="trailing" constant="-20" id="oS3-Yp-qu7"/>
+                            <constraint firstItem="D1K-62-MHF" firstAttribute="top" secondItem="ZuB-1J-Pa8" secondAttribute="bottom" id="z1M-8L-etl"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="ZuB-1J-Pa8"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="A3H-i9-2Xs"/>
+                                <exclude reference="REp-sw-Gtk"/>
+                                <exclude reference="oS3-Yp-qu7"/>
+                                <exclude reference="z1M-8L-etl"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="ZuB-1J-Pa8"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="A3H-i9-2Xs"/>
+                                <include reference="REp-sw-Gtk"/>
+                                <include reference="oS3-Yp-qu7"/>
+                                <include reference="z1M-8L-etl"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="tbView" destination="ZuB-1J-Pa8" id="Tg0-MZ-xKd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vbP-Jv-DHn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1771.5" y="568.875"/>
+            <point key="canvasLocation" x="1693.5" y="465.75"/>
         </scene>
     </scenes>
 </document>

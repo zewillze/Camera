@@ -34,6 +34,8 @@
 		9AC04CA41D6BDF5E0047F109 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC04CA31D6BDF5E0047F109 /* QuartzCore.framework */; };
 		9AC04CA61D6BDF630047F109 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC04CA51D6BDF630047F109 /* UIKit.framework */; };
 		9AC04CA91D6BE0380047F109 /* AVCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC04CA81D6BE0380047F109 /* AVCaptureViewController.swift */; };
+		9AEC3ACC1D7134B1009F08DD /* NSFileManager+Cam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEC3ACB1D7134B1009F08DD /* NSFileManager+Cam.swift */; };
+		9AEC3AD21D7166DF009F08DD /* PlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEC3AD11D7166DF009F08DD /* PlayerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,8 +121,8 @@
 		9AC04CA31D6BDF5E0047F109 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9AC04CA51D6BDF630047F109 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9AC04CA81D6BE0380047F109 /* AVCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVCaptureViewController.swift; sourceTree = "<group>"; };
-		A89F9C12D36018048D089904 /* Pods-Camera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Camera.release.xcconfig"; path = "Pods/Target Support Files/Pods-Camera/Pods-Camera.release.xcconfig"; sourceTree = "<group>"; };
-		F3B12D13602BD9E2438C38BE /* Pods-Camera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Camera.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Camera/Pods-Camera.debug.xcconfig"; sourceTree = "<group>"; };
+		9AEC3ACB1D7134B1009F08DD /* NSFileManager+Cam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSFileManager+Cam.swift"; sourceTree = "<group>"; };
+		9AEC3AD11D7166DF009F08DD /* PlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,15 +148,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1CA2B318331EBADCE6FCFA01 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F3B12D13602BD9E2438C38BE /* Pods-Camera.debug.xcconfig */,
-				A89F9C12D36018048D089904 /* Pods-Camera.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		9A5A57801D6C56ED009959F1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,7 +172,6 @@
 				9A78B1AB1D6B3A1C009E3E0D /* Camera */,
 				9AC04CA71D6BDF7E0047F109 /* Frameworks */,
 				9A78B1AA1D6B3A1B009E3E0D /* Products */,
-				1CA2B318331EBADCE6FCFA01 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -194,14 +186,13 @@
 		9A78B1AB1D6B3A1C009E3E0D /* Camera */ = {
 			isa = PBXGroup;
 			children = (
+				9AEC3AD51D716BBD009F08DD /* PickV */,
+				9AEC3AD41D716BB5009F08DD /* GPUImage */,
+				9AEC3AD31D716BA6009F08DD /* AVCapture */,
 				9A5A57BC1D6C5CE9009959F1 /* GPUImage-iOS.xcodeproj */,
 				9A78B1AC1D6B3A1C009E3E0D /* AppDelegate.swift */,
 				9A78B1AE1D6B3A1C009E3E0D /* ViewController.swift */,
 				9A78B1B01D6B3A1C009E3E0D /* Main.storyboard */,
-				9AC04CA81D6BE0380047F109 /* AVCaptureViewController.swift */,
-				9A5A57391D6C2C47009959F1 /* CameraManager.swift */,
-				9A5A57351D6C1CE1009959F1 /* CaptureVideoViewController.swift */,
-				9A5A57371D6C1CF2009959F1 /* FilesViewControllers.swift */,
 				9A5A577D1D6C5242009959F1 /* GPUImageViewController.swift */,
 				9ABE78E11D6C68A900251395 /* images */,
 				9A78B1B31D6B3A1C009E3E0D /* Assets.xcassets */,
@@ -242,6 +233,33 @@
 			);
 			name = Frameworks;
 			path = Camera/Frameworks;
+			sourceTree = "<group>";
+		};
+		9AEC3AD31D716BA6009F08DD /* AVCapture */ = {
+			isa = PBXGroup;
+			children = (
+				9AC04CA81D6BE0380047F109 /* AVCaptureViewController.swift */,
+				9A5A57391D6C2C47009959F1 /* CameraManager.swift */,
+				9A5A57351D6C1CE1009959F1 /* CaptureVideoViewController.swift */,
+				9A5A57371D6C1CF2009959F1 /* FilesViewControllers.swift */,
+				9AEC3ACB1D7134B1009F08DD /* NSFileManager+Cam.swift */,
+				9AEC3AD11D7166DF009F08DD /* PlayerController.swift */,
+			);
+			name = AVCapture;
+			sourceTree = "<group>";
+		};
+		9AEC3AD41D716BB5009F08DD /* GPUImage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = GPUImage;
+			sourceTree = "<group>";
+		};
+		9AEC3AD51D716BBD009F08DD /* PickV */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = PickV;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,6 +383,8 @@
 			files = (
 				9A5A57381D6C1CF2009959F1 /* FilesViewControllers.swift in Sources */,
 				9A78B1AF1D6B3A1C009E3E0D /* ViewController.swift in Sources */,
+				9AEC3AD21D7166DF009F08DD /* PlayerController.swift in Sources */,
+				9AEC3ACC1D7134B1009F08DD /* NSFileManager+Cam.swift in Sources */,
 				9AC04CA91D6BE0380047F109 /* AVCaptureViewController.swift in Sources */,
 				9A5A57361D6C1CE1009959F1 /* CaptureVideoViewController.swift in Sources */,
 				9A5A573A1D6C2C47009959F1 /* CameraManager.swift in Sources */,
@@ -490,7 +510,6 @@
 		};
 		9A78B1BC1D6B3A1C009E3E0D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F3B12D13602BD9E2438C38BE /* Pods-Camera.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -505,7 +524,6 @@
 		};
 		9A78B1BD1D6B3A1C009E3E0D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A89F9C12D36018048D089904 /* Pods-Camera.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

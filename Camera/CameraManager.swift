@@ -17,10 +17,9 @@ class CameraManager: NSObject {
     
     var previewLayer:AVCaptureVideoPreviewLayer!
     var delegate: CameraManagerDelegate?
-    var recording:Bool {
-        get{
-           return self.session.running
-        }
+    private var onrecord: Bool!
+    var recording:Bool{
+        return onrecord
     }
     
     private var currentCameraDevice:AVCaptureDevice?
@@ -32,12 +31,14 @@ class CameraManager: NSObject {
     private var frontCameraDevice: AVCaptureDevice?
     private var audioMicDevice: AVCaptureDevice?
     
+    
+    
     private var stillCameraOutput: AVCaptureStillImageOutput?
     private var videoOutput: AVCaptureVideoDataOutput?
     private var audioOutput: AVCaptureAudioDataOutput?
     
-    // MARK - TODO write & save video files
-    
+   
+     // MARK: - TODO write & save video files
     private var assetWrite: AVAssetWriter?
     private var assetWriterInputPixelBufferAdaptor: AVAssetWriterInputPixelBufferAdaptor?
     private var assetWriterVideoInput: AVAssetWriterInput?
@@ -49,7 +50,75 @@ class CameraManager: NSObject {
         self.delegate = delegate
         super.init()
         initializeSession()
+        onrecord = false
     }
+    
+    func startRecording() {
+        let url = NSFileManager.createVideoFileURL()
+        if let videoUrl = url {
+            do {
+                assetWrite = try AVAssetWriter(URL: videoUrl, fileType: AVFileTypeQuickTimeMovie)
+                
+                let videoSetting: [String : AnyObject] = [
+                    AVVideoCodecKey: AVVideoCodecH264,
+                    AVVideoWidthKey: 320,
+                    AVVideoHeightKey: 240,
+                    AVVideoCompressionPropertiesKey: [
+                        AVVideoPixelAspectRatioKey: [
+                            AVVideoPixelAspectRatioHorizontalSpacingKey: 1,
+                            AVVideoPixelAspectRatioVerticalSpacingKey: 1
+                        ],
+                        AVVideoMaxKeyFrameIntervalKey: 1,
+                        AVVideoAverageBitRateKey: 1280000
+                    ]
+                ]
+                
+                assetWriterVideoInput = AVAssetWriterInput(mediaType: AVMediaTypeVideo, outputSettings: videoSetting)
+                assetWriterVideoInput?.expectsMediaDataInRealTime = true
+                assetWriterVideoInput?.transform = CGAffineTransformMakeRotation(CGFloat(M_PI / 2))
+                
+                if ((assetWrite?.canAddInput(assetWriterVideoInput!)) != nil) {
+                    assetWrite?.addInput(assetWriterVideoInput!)
+                }
+                
+                let audioSetting: [String: AnyObject] = [
+                    AVFormatIDKey: NSNumber(unsignedInt: kAudioFormatMPEG4AAC),
+                    AVNumberOfChannelsKey: 1,
+                    AVSampleRateKey: 22050
+                ]
+                
+                assetWriterAudioInput = AVAssetWriterInput(mediaType: AVMediaTypeAudio, outputSettings: audioSetting)
+                if ((assetWrite?.canAddInput(assetWriterAudioInput!)) != nil) {
+                    assetWrite?.addInput(assetWriterAudioInput!)
+                }
+             
+                onrecord = true
+            }catch _ {
+                
+            }
+        }
+        
+    }
+    
+    
+    func endRecording()  {
+        if let assetWrite = assetWrite {
+            if let assetWriterVideoInput = assetWriterVideoInput {
+                assetWriterVideoInput.markAsFinished()
+            }
+            
+            if let assetWriterAudioInput = assetWriterAudioInput {
+                assetWriterAudioInput.markAsFinished()
+            }
+            self.onrecord = false
+            assetWrite.finishWritingWithCompletionHandler({ 
+                
+            })
+        }
+        
+        
+    }
+    
     
     func initializeSession() {
         session = AVCaptureSession()
@@ -93,14 +162,17 @@ class CameraManager: NSObject {
     }
     
     func startRunning() {
+        self.startRecording()
         performConfiguration { () -> Void in
             self.session.startRunning()
         }
     }
 
     func stopRunning() {
+        self.endRecording()
         performConfiguration { () -> Void in
             self.session.stopRunning()
+            
         }
     }
 }
@@ -115,7 +187,7 @@ private extension CameraManager {
     
     func configureSession() {
         configureDeviceInput()
-        
+        configureOutput()
     }
     
     func configureDeviceInput() {
@@ -159,14 +231,15 @@ private extension CameraManager {
     
     func configureOutput() {
         videoOutput = AVCaptureVideoDataOutput()
-//        videoOutput?.videoSettings = [kCVPixelBufferPixelFormatTypeKey: kCVPixelFormatType_32BGRA as! AnyObject]
+        
+        videoOutput?.videoSettings = [kCVPixelBufferPixelFormatTypeKey:  Int(kCVPixelFormatType_32BGRA)]
+        
         videoOutput?.alwaysDiscardsLateVideoFrames = true
         videoOutput?.setSampleBufferDelegate(self, queue: self.sessionQueue)
         
         audioOutput = AVCaptureAudioDataOutput()
         audioOutput?.setSampleBufferDelegate(self, queue: self.sessionQueue)
-        
-       
+    
         
         if self.session.canAddOutput(videoOutput){
             self.session.addOutput(videoOutput)
@@ -176,11 +249,39 @@ private extension CameraManager {
             self.session.addOutput(audioOutput)
         }
     }
+    
+    
 }
 
 
 extension CameraManager: AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureAudioDataOutputSampleBufferDelegate{
     
+    func captureOutput(captureOutput: AVCaptureOutput!, didDropSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!) {
+        
+    }
+    
+    func captureOutput(captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!) {
+        if !onrecord {return}
+        
+        if assetWrite?.status != .Writing {
+            let cst = CMSampleBufferGetOutputPresentationTimeStamp(sampleBuffer)
+            assetWrite?.startWriting()
+            assetWrite?.startSessionAtSourceTime(cst)
+        }
+        
+        if captureOutput == videoOutput {
+            if let assetWriterVideoInput = self.assetWriterVideoInput where assetWriterVideoInput.readyForMoreMediaData {
+                assetWriterVideoInput.appendSampleBuffer(sampleBuffer)
+            }
+        }
+        else if captureOutput == audioOutput {
+            if let assetWriterAudioInput = self.assetWriterAudioInput where assetWriterAudioInput.readyForMoreMediaData {
+                assetWriterAudioInput.appendSampleBuffer(sampleBuffer)
+            }
+        }
+ 
+    }
+
 }
 
 

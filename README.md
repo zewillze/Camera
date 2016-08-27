@@ -1,1 +1,8 @@
-#### 常见的几种视频录制方案
+iOS Record video & audio 
+
+Play Video
+
+Use GPUImage to record video & audio
+
+
+
